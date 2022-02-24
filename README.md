@@ -4,7 +4,7 @@
 
 ## Install php dependancies
 
-composer i
+`composer i`
 
 ## Installation & updates
 
