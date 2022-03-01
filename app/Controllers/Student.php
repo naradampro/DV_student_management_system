@@ -37,26 +37,54 @@ public function view($sudent_index_number = null)
     echo view('dashboard_footer', $data);
 }
 
-// public function create()
-// {
-//     $model = model(NewsModel::class);
+public function create()
+{
+    $model = model(StudentModel::class);
 
-//     if ($this->request->getMethod() === 'post' && $this->validate([
-//         'title' => 'required|min_length[3]|max_length[255]',
-//         'body'  => 'required',
-//     ])) {
-//         $model->save([
-//             'title' => $this->request->getPost('title'),
-//             'sudent_index_number$sudent_index_number'  => url_title($this->request->getPost('title'), '-', true),
-//             'body'  => $this->request->getPost('body'),
-//         ]);
+    if ($this->request->getMethod() === 'post' && $this->validate([
+        'first_name' => 'required|min_length[3]|max_length[50]',
+        'middle_name'  => 'required|min_length[3]|max_length[50]',
+        'last_name' => 'required|min_length[3]|max_length[50]',
+        'student_index_number' => 'required',
+        'date_of_addmission' => 'required',
+        'student_insurance_number',
+        'student_identification_number' => 'required',
+        'contact_number' => 'required',
+        'birthday' => 'required',
+        'address' => 'required',
+        'gender',
+        'race_id' => 'required',
+        'religion_id' => 'required',
+        'gnd_id' => 'required',
+        'class_id' => 'required',
+        'medium_id' => 'required',
 
-//         echo view('news/success');
-//     } else {
-//         echo view('templates/header', ['title' => 'Create a news item']);
-//         echo view('news/create');
-//         echo view('templates/footer');
-//     }
-// }
+    ])) {
+        $model->save([
+            'first_name' => $this->request->getPost('first_name'), 
+            'middle_name'  => $this->request->getPost('middle_name'),
+            'last_name' => $this->request->getPost('last_name'),
+            'student_index_number' => $this->request->getPost('student_index_number'),
+            'date_of_addmission' => $this->request->getPost('date_of_addmission'),
+            'student_insurance_number' => $this->request->getPost('student_insurance_number'),
+            'student_identification_number' => $this->request->getPost('student_identification_number'),
+            'contact_number' => $this->request->getPost('contact_number'),
+            'birthday' => $this->request->getPost('birthday'),
+            'address' => $this->request->getPost('address'),
+            'gender' => $this->request->getPost('gender'),
+            'race_id' => $this->request->getPost('race_id'),
+            'religion_id' => $this->request->getPost('religion_id'),
+            'gnd_id' => $this->request->getPost('gnd_id'),
+            'class_id' => $this->request->getPost('class_id'),
+            'medium_id' => $this->request->getPost('medium_id'),
+        ]);
+
+        echo view('student/success');
+    } else {
+        echo view('dashboard_header');
+        echo view('student/student_registration_form');
+        echo view('dashboard_footer');
+    }
+}
 
 }

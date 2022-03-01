@@ -32,9 +32,11 @@ $routes->setAutoRoute(true);
 // We get a performance increase by specifying the default
 // route since we don't have to scan directories.
 $routes->get('/', 'Home::index');
+$routes->match(['get', 'post'], 'student/student_registration_form/', 'Student::create');
 $routes->get('student/(:segment)', 'Student::view/$1');
 $routes->get('student', 'Student::index');
-$routes->get('(:any)', 'Forms::view/$1'); 
+$routes->get('(:any)', 'Forms::view/$1');
+
 
 /*
  * --------------------------------------------------------------------

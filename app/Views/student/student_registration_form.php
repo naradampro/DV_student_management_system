@@ -1,11 +1,14 @@
-<!-- Begin Page Content -->
+<!-- Begin Page Content --> 
 <div class="container-fluid">
 
 <!-- Page Heading -->
 <h1 class="h3 mb-4 text-gray-800">Student Regitration Form</h1>
+<?= session()->getFlashdata('error') ?>
+<?= service('validation')->listErrors() ?>
 
-<form class="user">
-    <label><strong>Student Name</strong></label><br>
+<form class="user" action="/student/student_registration_form" method="post">
+<?= csrf_field() ?>
+<label><strong>Student Name</strong></label><br>
         <div class="form-group row">
             <div class="col-sm-4 mb-4 mb-sm-0">
                 <input type="text" class="form-control" id="first_name" placeholder="First Name" name="first_name">
@@ -124,9 +127,8 @@
                     </div>
             </div>
         </div>
-        <a href="login.html" class="btn btn-primary btn-block">
-            Register Student
-        </a>
+        <input type="submit" name="submit"  class="btn btn-primary btn-block" value="Register Student" />
+         
     </form>
 
 </div>
