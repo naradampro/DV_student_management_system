@@ -24,13 +24,14 @@ public function view($sudent_index_number = null)
 {
     $model = model(StudentModel::class);
 
-    $data['student'] = $model->getStudentDetails($sudent_index_number);
+    $data['student'] = $model->rawgetall();
+    //$data['student'] = $model->getStudentDetails($sudent_index_number);
 
     if (empty($data['student'])) {
         throw new \CodeIgniter\Exceptions\PageNotFoundException('Cannot find the student item: ' . $sudent_index_number);
     }
 
-    $data['sudent_index_number'] = $data['student']['sudent_index_number'];
+    //$data['sudent_index_number'] = $data['student']['sudent_index_number'];
 
     echo view('main_header', $data);
     echo view('student/view', $data);

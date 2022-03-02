@@ -25,13 +25,18 @@ class StudentModel extends Model
         'class_id',
         'medium_id',];
 
-    public function getStudentDetails($student_index_number = false)
-{
-    if ($student_index_number === false) {
-        return $this->findAll();
+    public function getStudentDetails($student_index_number = false){
+        if ($student_index_number === false) {
+            return $this->findAll();
+        }
+
+        return $this->where(['student_index_number' => $student_index_number])->first();
     }
 
-    return $this->where(['student_index_number' => $student_index_number])->first();
-}
+    public function rawgetall(){
+        $sql="Select * from ".$table;    
+        $query = $this->db->query($SQL);
+        return $query->result_array();
+    }
 
 }
