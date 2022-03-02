@@ -15,9 +15,9 @@ class Student extends BaseController
         'title' => 'Student Details',
     ];
 
-    echo view('dashboard_header', $data);
+    echo view('main_header', $data);
     echo view('student/overview', $data);
-    echo view('dashboard_footer', $data);
+    echo view('main_footer', $data);
 }
 
 public function view($sudent_index_number = null)
@@ -32,9 +32,9 @@ public function view($sudent_index_number = null)
 
     $data['sudent_index_number'] = $data['student']['sudent_index_number'];
 
-    echo view('dashboard_header', $data);
+    echo view('main_header', $data);
     echo view('student/view', $data);
-    echo view('dashboard_footer', $data);
+    echo view('main_footer', $data);
 }
 
 public function create()
@@ -81,9 +81,9 @@ public function create()
 
         echo view('student/success');
     } else {
-        echo view('dashboard_header');
+        echo view('main_header');
         echo view('student/student_registration_form');
-        echo view('dashboard_footer');
+        echo view('main_footer');
     }
 }
 

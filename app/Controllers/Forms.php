@@ -18,8 +18,8 @@ class Forms extends BaseController
     
         $data['title'] = ucfirst($page); // Capitalize the first letter
     
-        echo view('dashboard_header', $data);
+        echo view('main_header', $data);
         echo view('forms/' . $page, $data);
-        echo view('dashboard_footer', $data);
+        echo view('main_footer', $data);
     }
 }
