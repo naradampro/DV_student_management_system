@@ -36,6 +36,7 @@ $routes->match(['get', 'post'], 'student/student_registration_form/', 'Student::
 $routes->get('student/(:segment)', 'Student::view/$1');
 $routes->get('student', 'Student::index');
 $routes->get('(:any)', 'Forms::view/$1');
+$routes->get('devforms/', 'Home::devforms');
 
 
 /*

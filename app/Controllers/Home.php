@@ -4,10 +4,17 @@ namespace App\Controllers;
 
 class Home extends BaseController
 {
-    // public function index()
-    // {
-    //     echo view('dashboard_header');
-    //     echo view('forms/student_registration_form');
-    //     echo view('dashboard_footer');
-    // }
+    public function index()
+    {
+        echo view('main_header');
+        echo view('common/dashboard');
+        echo view('main_footer');
+    }
+
+    public function devforms()
+    {
+        echo view('main_header');
+        echo view('forms/devforms');
+        echo view('main_footer');
+    }
 }
