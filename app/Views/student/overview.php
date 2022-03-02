@@ -9,10 +9,8 @@
 </div>
 
 <?php if (! empty($student) && is_array($student)): ?>
-
-    <?php foreach ($student as $student_item): ?>
-        <!-- DataTale -->
-        <div class="card shadow mb-4">
+    <!-- DataTale -->
+    <div class="card shadow mb-4">
             <div class="card-header py-3">
                 <h6 class="m-0 font-weight-bold text-primary">All students</h6>
             </div>
@@ -36,19 +34,19 @@
                             </tr>
                         </tfoot>
                         <tbody>
-                            <tr>
-                                <td><?= esc($student_item['student_index_number']) ?></td>
-                                <td><?= esc($student_item['first_name']) ?> <?= esc($student_item['middle_name']) ?> <?= esc($student_item['last_name']) ?></td>
-                                <td><?= esc($student_item['address']) ?></td>
-                                <td><?= esc($student_item['birthday']) ?></td>                                
-                            </tr>
-                        </tbody>
+    <?php foreach ($student as $student_item): ?>
+        <tr>
+            <td><?= esc($student_item['student_index_number']) ?></td>
+            <td><?= esc($student_item['first_name']) ?> <?= esc($student_item['middle_name']) ?> <?= esc($student_item['last_name']) ?></td>
+            <td><?= esc($student_item['address']) ?></td>
+            <td><?= esc($student_item['birthday']) ?></td>                                
+        </tr>                            
+    <?php endforeach ?>
+    </tbody>
                     </table>
                 </div>
             </div>
-        </div>        
-
-    <?php endforeach ?>
+        </div>   
 
 <?php else: ?>
 
