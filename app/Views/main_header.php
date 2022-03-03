@@ -75,7 +75,7 @@
 
             <!-- Nav Item - Classes -->
             <li class="nav-item">
-                <a class="nav-link" href="<?= base_url() ?>/classes">
+                <a class="nav-link" href="<?= base_url() ?>/class">
                     <i class="fas fa-fw fa-store"></i>
                     <span>Classes</span></a>
             </li>

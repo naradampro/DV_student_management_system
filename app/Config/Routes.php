@@ -43,6 +43,9 @@ $routes->get('teacher', 'TeacherController::index');
 $routes->match(['get', 'post'], 'teacher/add_teacher_form/', 'TeacherController::create');
 //$routes->get('teacher/(:segment)', 'TeacherController::view/$1');
 
+//routes for class managemant
+$routes->get('class', 'ClassController::index');
+
 //routes for for temporary dev purposes
 $routes->get('devforms/', 'Home::devforms');
 

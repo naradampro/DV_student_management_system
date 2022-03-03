@@ -40,11 +40,11 @@ class ClassModel extends Model
     protected $beforeDelete   = [];
     protected $afterDelete    = [];
 
-    public function getClassData($calss_id = false){
-        if ($calss_id === false) {
+    public function getClassData($class_id = false){
+        if ($class_id === false) {
             return $this->findAll();
         }
 
-        return $this->where(['calss_id' => $calss_id])->first();
+        return $this->where(['class_id' => $class_id])->first();
     }
 }

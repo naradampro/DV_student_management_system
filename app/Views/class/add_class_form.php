@@ -3,8 +3,11 @@
 
 <!-- Page Heading -->
 <h1 class="h3 mb-4 text-gray-800">Add Class Form</h1>
+<?= session()->getFlashdata('error') ?>
+<?= service('validation')->listErrors() ?>
 
-<form class="user">
+<form class="user" action="/class/add_class_form" method="post">
+<?= csrf_field() ?>
     <div class="form-group row">
         <!--Class Name-->
         <div class="col-sm-6 mb-3 mb-sm-0">
