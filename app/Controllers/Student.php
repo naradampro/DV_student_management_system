@@ -25,6 +25,7 @@ public function view($sudent_index_number = null)
     $model = model(StudentModel::class);
 
     $data['student'] = $model->rawgetall();
+    
     //$data['student'] = $model->getStudentDetails($sudent_index_number);
 
     if (empty($data['student'])) {
@@ -41,6 +42,21 @@ public function view($sudent_index_number = null)
 public function create()
 {
     $model = model(StudentModel::class);
+    $race_model = model(RaceModel::class);
+    $medium_model = model(Mediummodel::class);
+    $class_model = model(ClassModel::class);
+    $gnd_model = model(GramaNiladhariDivisionMOdel::class);
+    $religion_model = model(ReligionModel::class);
+
+
+    $data = [
+        'race_data'  => $race_model->getRaceData(),
+        'medium_data' => $medium_model->getMediumData(),
+        'class_data' => $class_model->getClassData(),
+        'gnd_data' => $gnd_model->getGndData(),
+        'religion_data' => $religion_model->getReligionData(),
+        'title' => 'Student Registration',
+    ];
 
     if ($this->request->getMethod() === 'post' && $this->validate([
         'first_name' => 'required|min_length[3]|max_length[50]',
@@ -82,9 +98,9 @@ public function create()
 
         echo view('student/success');
     } else {
-        echo view('main_header');
-        echo view('student/student_registration_form');
-        echo view('main_footer');
+        echo view('main_header', $data);
+        echo view('student/student_registration_form', $data);
+        echo view('main_footer', $data);
     }
 }
 

@@ -71,11 +71,11 @@
             <div class="col-sm-4 mb-4 mb-sm-0"> 
                 <label><strong>Race</strong></label><br>
                     <div class="input-group mb-3">
-                        <select class="custom-select" id="race_id" name="race_id">
-                            <option selected>Choose Gender</option>
-                            <option value="1">One</option>
-                            <option value="2">Two</option>
-                            <option value="3">Three</option>
+                        <select class="custom-select" id="race_id" name="race_id">                        
+                            <option selected>Choose the race</option>
+                            <?php foreach ($race_data as $item): ?>
+                            <option value="<?=$item["race_id"]?>"><?=$item["race_name"]?></option>
+                            <?php endforeach ?>
                         </select> 
                     </div>
             </div>
@@ -85,9 +85,9 @@
                     <div class="input-group mb-3">
                         <select class="custom-select" id="religion_id" name="religion_id">
                             <option selected>Choose Religion</option>
-                            <option value="1">One</option>
-                            <option value="2">Two</option>
-                            <option value="3">Three</option>
+                            <?php foreach ($religion_data as $item): ?>
+                            <option value="<?=$item["religion_id"]?>"><?=$item["religion_name"]?></option>
+                            <?php endforeach ?>
                         </select> 
                     </div>
             </div>
@@ -98,9 +98,9 @@
                     <div class="input-group mb-3">
                         <select class="custom-select" id="gnd_id" name="gnd_id">
                             <option selected>Choose Grama Niladhari Division</option>
-                            <option value="1">One</option>
-                            <option value="2">Two</option>
-                            <option value="3">Three</option>
+                            <?php foreach ($gnd_data as $item): ?>
+                            <option value="<?=$item["gnd_id"]?>"><?=$item["gnd_name"]?></option>
+                            <?php endforeach ?>
                         </select> 
                     </div>
             </div>
@@ -109,9 +109,9 @@
                     <div class="input-group mb-3">
                         <select class="custom-select" id="class_id" name="class_id">
                             <option selected>Choose Class</option>
-                            <option value="1">One</option>
-                            <option value="2">Two</option>
-                            <option value="3">Three</option>
+                            <?php foreach ($class_data as $item): ?>
+                            <option value="<?=$item["class_id"]?>"><?=$item["class_name"]?></option>
+                            <?php endforeach ?>
                         </select> 
                     </div>
             </div>
@@ -120,9 +120,9 @@
                     <div class="input-group mb-3">
                         <select class="custom-select" id="medium_id" name="medium_id">
                             <option selected>Choose Medium</option>
-                            <option value="1">One</option>
-                            <option value="2">Two</option>
-                            <option value="3">Three</option>
+                            <?php foreach ($medium_data as $item): ?>
+                            <option value="<?=$item["medium_id"]?>"><?=$item["medium_name"]?></option>
+                            <?php endforeach ?>
                         </select> 
                     </div>
             </div>

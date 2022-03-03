@@ -43,10 +43,10 @@
         </tr>                            
     <?php endforeach ?>
     </tbody>
-                    </table>
-                </div>
-            </div>
-        </div>   
+    </table>
+    </div>
+    </div>
+    </div>   
 
 <?php else: ?>
 

@@ -35,7 +35,7 @@ class StudentModel extends Model
 
     public function rawgetall(){
         $sql="Select * from ".$table;    
-        $query = $this->db->query($SQL);
+        $query = $this->db->query($sql);
         return $query->result_array();
     }
 
