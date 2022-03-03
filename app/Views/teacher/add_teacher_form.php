@@ -58,7 +58,7 @@
                     <input type="radio" id="gender_male" name="gender_id" value="1">
                     <label for="male"> MALE</label>                
                 
-                    <input type="radio" id="gender_female" name="gender_id" value="1">
+                    <input type="radio" id="gender_female" name="gender_id" value="2">
                     <label for="female"> FEMALE</label>                
         </div> 
         <!-- Date Of Birth -->
