@@ -61,9 +61,9 @@
             <div class="col-sm-4 mb-4 mb-sm-0"> 
                 <label><strong>Gender</strong></label><br> 
                         <div class="input-group-text">
-                         <input type="radio" id="gender_id" value="M" name="gender" class="col-sm-4 mb-4 mb-sm-0">
+                         <input type="radio" id="gender_id" value="1" name="gender" class="col-sm-4 mb-4 mb-sm-0">
                          Male 
-                         <input type="radio" id="gender_id" value="F" name="gender" class="col-sm-4 mb-4 mb-sm-0">
+                         <input type="radio" id="gender_id" value="2" name="gender" class="col-sm-4 mb-4 mb-sm-0">
                          Female
                         </div> 
                      
