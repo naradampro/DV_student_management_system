@@ -69,7 +69,7 @@ public function create()
         'contact_number' => 'required',
         'birthday' => 'required',
         'address' => 'required',
-        'gender' => 'required',
+        'gender_id' => 'required',
         'race_id' => 'required',
         'religion_id' => 'required',
         'gnd_id' => 'required',
@@ -88,15 +88,18 @@ public function create()
             'contact_number' => $this->request->getPost('contact_number'),
             'birthday' => $this->request->getPost('birthday'),
             'address' => $this->request->getPost('address'),
-            'gender' => $this->request->getPost('gender'),
+            'gender_id' => $this->request->getPost('gender_id'),
             'race_id' => $this->request->getPost('race_id'),
             'religion_id' => $this->request->getPost('religion_id'),
             'gnd_id' => $this->request->getPost('gnd_id'),
             'class_id' => $this->request->getPost('class_id'),
             'medium_id' => $this->request->getPost('medium_id'),
+            'student_status_id' => 1
         ]);
 
+        echo view('main_header');
         echo view('student/success');
+        echo view('main_footer');
     } else {
         echo view('main_header', $data);
         echo view('student/student_registration_form', $data);

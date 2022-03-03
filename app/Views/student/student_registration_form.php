@@ -59,14 +59,14 @@
         </div> 
         <div class="form-group row"> 
             <div class="col-sm-4 mb-4 mb-sm-0"> 
-                <label><strong>Gender</strong></label><br> 
-                        <div class="input-group-text">
-                         <input type="radio" id="gender_id" value="1" name="gender" class="col-sm-4 mb-4 mb-sm-0">
-                         Male 
-                         <input type="radio" id="gender_id" value="2" name="gender" class="col-sm-4 mb-4 mb-sm-0">
-                         Female
-                        </div> 
-                     
+                <label><strong>Gender</strong></label><br>
+                
+                    <input type="radio" id="gender_male" name="gender_id" value="1">
+                    <label for="male"> MALE</label>                
+                
+                    <input type="radio" id="gender_female" name="gender_id" value="1">
+                    <label for="female"> FEMALE</label>
+                
             </div> 
             <div class="col-sm-4 mb-4 mb-sm-0"> 
                 <label><strong>Race</strong></label><br>
