@@ -7,7 +7,7 @@ use CodeIgniter\Model;
 class MediumModel extends Model
 {
     protected $DBGroup          = 'default';
-    protected $table            = 'mediums';
+    protected $table            = 'medium';
     protected $primaryKey       = 'id';
     protected $useAutoIncrement = true;
     protected $insertID         = 0;
