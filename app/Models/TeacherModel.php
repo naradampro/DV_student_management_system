@@ -27,10 +27,4 @@ class TeacherModel extends Model
         return $this->where(['teacher_id' => $teacher_id])->first();
     }
 
-    public function rawgetall(){
-        $sql="Select * from ".$table;    
-        $query = $this->db->query($SQL);
-        return $query->result_array();
-    }
-
 }

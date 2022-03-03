@@ -32,13 +32,18 @@ $routes->setAutoRoute(true);
 // We get a performance increase by specifying the default
 // route since we don't have to scan directories.
 $routes->get('/', 'Home::index');
-$routes->match(['get', 'post'], 'student/student_registration_form/', 'Student::create');
-$routes->get('student/(:segment)', 'Student::view/$1');
-$routes->get('student', 'Student::index');
-$routes->get('teacher/(:segment)', 'TeacherController::view/$1');
-$routes->match(['get', 'post'], 'teacher/add_teacher_form/', 'TeacherController::create');
+
+//routes for student management
+$routes->get('student', 'StudentController::index');
+$routes->match(['get', 'post'], 'student/student_registration_form/', 'StudentController::create');
+//$routes->get('student/(:segment)', 'Student::view/$1');
+
+//routes for teacher managemant
 $routes->get('teacher', 'TeacherController::index');
-$routes->get('(:any)', 'Forms::view/$1');
+$routes->match(['get', 'post'], 'teacher/add_teacher_form/', 'TeacherController::create');
+//$routes->get('teacher/(:segment)', 'TeacherController::view/$1');
+
+//routes for for temporary dev purposes
 $routes->get('devforms/', 'Home::devforms');
 
 

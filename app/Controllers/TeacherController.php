@@ -24,8 +24,8 @@ public function view($teacher_id = null)
 {
     $model = model(TeacherModel::class);
 
-     $data['teacher'] = $model->rawgetall();
-    //$data['student'] = $model->getTeacherDetails($teacher_id);
+    //$data['teacher'] = $model->getTeacherDetails();
+    $data['student'] = $model->getTeacherDetails($teacher_id);
 
     if (empty($data['teacher'])) {
         throw new \CodeIgniter\Exceptions\PageNotFoundException('Cannot find the teacher item: ' . $teacher_id);
@@ -50,10 +50,8 @@ public function create()
         'contact_number' => 'required',
         'birthday' => 'required',
         'address' => 'required',
-        'gender' => 'required',
+        'gender_id' => 'required',
         'teacher_grade_id' => 'required',
-        'subject_id' => 'required', 
-        'medium_id' => 'required',
 
     ])) {
         $model->save([
@@ -64,18 +62,18 @@ public function create()
             'contact_number' => $this->request->getPost('contact_number'),
             'birthday' => $this->request->getPost('birthday'),
             'address' => $this->request->getPost('address'),
-            'gender' => $this->request->getPost('gender'),
+            'gender_id' => $this->request->getPost('gender_id'),
             'teacher_grade_id' => $this->request->getPost('teacher_grade_id'),
             'subject_id' => $this->request->getPost('subject_id'),
             'medium_id' => $this->request->getPost('medium_id'),
         ]);
+        
+        return redirect()->to('/teacher');
 
-        echo view('teacher/success');
     } else {
         echo view('main_header');
         echo view('teacher/add_teacher_form');
         echo view('main_footer');
     }
 }
-
 }

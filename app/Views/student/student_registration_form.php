@@ -65,8 +65,7 @@
                     <label for="male"> MALE</label>                
                 
                     <input type="radio" id="gender_female" name="gender_id" value="1">
-                    <label for="female"> FEMALE</label>
-                
+                    <label for="female"> FEMALE</label>                
             </div> 
             <div class="col-sm-4 mb-4 mb-sm-0"> 
                 <label><strong>Race</strong></label><br>

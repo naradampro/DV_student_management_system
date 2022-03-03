@@ -6,7 +6,7 @@
 <?= session()->getFlashdata('error') ?>
 <?= service('validation')->listErrors() ?>
 
-<form class="user">
+<form class="user" action="/teacher/add_teacher_form" method="post">
 <?= csrf_field() ?>
     <!-- Name -->
     <label>
@@ -53,13 +53,13 @@
     <div class="form-group row">
         <!-- Gender --> 
         <div class="col-sm-4 mb-4 mb-sm-0"> 
-            <label>
-                <strong>Gender</strong>
-            </label><br> 
-            <div class="input-group-text">
-                <input type="radio" id="gender_id" value="1" name="gender" class="col-sm-4 mb-4 mb-sm-0">Male 
-                <input type="radio" id="gender_id" value="2" name="gender" class="col-sm-4 mb-4 mb-sm-0">Female
-            </div>          
+                <label><strong>Gender</strong></label><br>
+                
+                    <input type="radio" id="gender_male" name="gender_id" value="1">
+                    <label for="male"> MALE</label>                
+                
+                    <input type="radio" id="gender_female" name="gender_id" value="1">
+                    <label for="female"> FEMALE</label>                
         </div> 
         <!-- Date Of Birth -->
         <div class="col-sm-4"> 
@@ -84,38 +84,6 @@
         </div>
     </div>
     <hr>
-
-    <div class="form-group row">
-        <!-- Subject -->
-        <div class="col-sm-6 mb-3 mb-sm-0"> 
-            <label>
-                <strong>Subject</strong>
-            </label><br>
-            <div class="input-group mb-3">
-                <select class="custom-select" id="subject_id" name="subject_id">
-                    <option selected>Choose Subject</option>
-                    <option value="1">One</option>
-                    <option value="2">Two</option>
-                    <option value="3">Three</option>
-                </select> 
-            </div>
-        </div>
-
-        <!-- Medium -->
-        <div class="col-sm-6"> 
-            <label>
-                <strong>Medium</strong>
-            </label><br>
-            <div class="input-group mb-3">
-                <select class="custom-select" id="medium_id" name="medium_id">
-                    <option selected>Choose Medium</option>
-                    <option value="1">One</option>
-                    <option value="2">Two</option>
-                    <option value="3">Three</option>
-                </select> 
-            </div>
-        </div>
-    </div>
 
     <input type="submit" name="submit"  class="btn btn-primary btn-block" value="Add Teacher" />
 </form>

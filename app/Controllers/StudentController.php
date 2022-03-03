@@ -4,7 +4,7 @@ namespace App\Controllers;
 
 use App\Models\StudentModel;
 
-class Student extends BaseController
+class StudentController extends BaseController
 {
     public function index()
 {
@@ -97,9 +97,8 @@ public function create()
             'student_status_id' => 1
         ]);
 
-        echo view('main_header');
-        echo view('student/success');
-        echo view('main_footer');
+        return redirect()->to('/student');
+
     } else {
         echo view('main_header', $data);
         echo view('student/student_registration_form', $data);
