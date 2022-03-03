@@ -6,5 +6,4 @@
 <a href="<?= base_url() ?>/exam_details_form">Exam Details Form</a><br><br>
 <a href="<?= base_url() ?>/marks_details_form">Marks Details Form</a><br><br>
 <a href="<?= base_url() ?>/subject_enroll_form">Subject Enroll Form</a><br><br>
-<a href="<?= base_url() ?>/teacher_grade_form">Teacher Grade Form</a><br><br>
 </div>
