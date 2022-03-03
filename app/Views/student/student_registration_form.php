@@ -2,7 +2,7 @@
 <div class="container-fluid">
 
 <!-- Page Heading -->
-<h1 class="h3 mb-4 text-gray-800">Student Regitration Form</h1>
+<h1 class="h3 mb-4 text-gray-800">Student Registration Form</h1>
 <?= session()->getFlashdata('error') ?>
 <?= service('validation')->listErrors() ?>
 

@@ -2,9 +2,12 @@
 <div class="container-fluid">
 
 <!-- Page Heading -->
-<h1 class="h3 mb-4 text-gray-800">Add Teacher Form</h1>
+<h1 class="h3 mb-4 text-gray-800">Teacher Registration Form</h1>
+<?= session()->getFlashdata('error') ?>
+<?= service('validation')->listErrors() ?>
 
 <form class="user">
+<?= csrf_field() ?>
     <!-- Name -->
     <label>
         <strong>Name</strong>
@@ -54,8 +57,8 @@
                 <strong>Gender</strong>
             </label><br> 
             <div class="input-group-text">
-                <input type="radio" id="gender_id" value="M" name="gender" class="col-sm-4 mb-4 mb-sm-0">Male 
-                <input type="radio" id="gender_id" value="F" name="gender" class="col-sm-4 mb-4 mb-sm-0">Female
+                <input type="radio" id="gender_id" value="1" name="gender" class="col-sm-4 mb-4 mb-sm-0">Male 
+                <input type="radio" id="gender_id" value="2" name="gender" class="col-sm-4 mb-4 mb-sm-0">Female
             </div>          
         </div> 
         <!-- Date Of Birth -->

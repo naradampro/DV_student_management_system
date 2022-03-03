@@ -68,7 +68,7 @@
 
             <!-- Nav Item - Teachers -->
             <li class="nav-item">
-                <a class="nav-link" href="<?= base_url() ?>/teachers">
+                <a class="nav-link" href="<?= base_url() ?>/teacher">
                     <i class="fas fa-fw fa-chalkboard-teacher"></i>
                     <span>Teachers</span></a>
             </li>
