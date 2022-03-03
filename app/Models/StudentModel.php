@@ -18,12 +18,13 @@ class StudentModel extends Model
         'contact_number', 
         'birthday', 
         'address',
-        'gender',
+        'gender_id',
         'race_id',
         'religion_id',
         'gnd_id',
         'class_id',
-        'medium_id',];
+        'medium_id',
+        'student_status_id'];
 
     public function getStudentDetails($student_index_number = false){
         if ($student_index_number === false) {
