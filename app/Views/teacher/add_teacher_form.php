@@ -76,9 +76,9 @@
             <div class="input-group mb-3">
                 <select class="custom-select" id="teacher_grade_id" name="teacher_grade_id">
                     <option selected>Choose Teacher Grade</option>
-                    <option value="1">One</option>
-                    <option value="2">Two</option>
-                    <option value="3">Three</option>
+                    <?php foreach ($grades as $item): ?>
+                    <option value="<?=$item["teacher_grade_id"]?>"><?=$item["teacher_grade_name"]?></option>
+                    <?php endforeach ?>
                 </select> 
             </div>
         </div>

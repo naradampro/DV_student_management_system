@@ -4,10 +4,10 @@ namespace App\Models;
 
 use CodeIgniter\Model;
 
-class ClassModel extends Model
+class TeacherGradeModel extends Model
 {
     protected $DBGroup          = 'default';
-    protected $table            = 'class_with_teacher';
+    protected $table            = 'teacher_grade';
     protected $primaryKey       = 'id';
     protected $useAutoIncrement = true;
     protected $insertID         = 0;
@@ -40,11 +40,11 @@ class ClassModel extends Model
     protected $beforeDelete   = [];
     protected $afterDelete    = [];
 
-    public function getClassData($class_id = false){
-        if ($class_id === false) {
+    public function getTeacherGradeData($teacher_grade_id = false){
+        if ($teacher_grade_id === false) {
             return $this->findAll();
         }
 
-        return $this->where(['class_id' => $class_id])->first();
+        return $this->where(['teacher_grade_id' => $teacher_grade_id])->first();
     }
 }

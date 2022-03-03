@@ -12,7 +12,7 @@ class TeacherController extends BaseController
 
     $data = [
         'teacher'  => $model->getTeacherDetails(),
-        'title' => 'Teacher Details',
+        'title' => 'Teacher Details',        
     ];
 
     echo view('main_header', $data);
@@ -25,7 +25,7 @@ public function view($teacher_id = null)
     $model = model(TeacherModel::class);
 
     //$data['teacher'] = $model->getTeacherDetails();
-    $data['student'] = $model->getTeacherDetails($teacher_id);
+    //$data['student'] = $model->getTeacherDetails($teacher_id);
 
     if (empty($data['teacher'])) {
         throw new \CodeIgniter\Exceptions\PageNotFoundException('Cannot find the teacher item: ' . $teacher_id);
@@ -41,6 +41,13 @@ public function view($teacher_id = null)
 public function create()
 {
     $model = model(TeacherModel::class);
+    $teacher_grade_model = model(TeacherGradeModel::class);
+
+    $data = [
+        'grades' => $teacher_grade_model->getTeacherGradeData(),
+        'title' => 'Add a teacher',        
+    ];   
+    
 
     if ($this->request->getMethod() === 'post' && $this->validate([
         'first_name' => 'required|min_length[3]|max_length[50]',
@@ -71,9 +78,9 @@ public function create()
         return redirect()->to('/teacher');
 
     } else {
-        echo view('main_header');
-        echo view('teacher/add_teacher_form');
-        echo view('main_footer');
+        echo view('main_header',$data);
+        echo view('teacher/add_teacher_form',$data);
+        echo view('main_footer',$data);
     }
 }
 }

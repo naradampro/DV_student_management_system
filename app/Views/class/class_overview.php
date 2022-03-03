@@ -23,6 +23,7 @@
                                 <th>Year</th>
                                 <th>Class Teacher</th>
                                 <th>Number Of Students</th>
+                                <th>Teacher Contact No.</th>
                             </tr>
                         </thead>
                         <tfoot>
@@ -31,6 +32,7 @@
                                 <th>Year</th>
                                 <th>Class Teacher</th>
                                 <th>Number Of Students</th>
+                                <th>Teacher Contact No.</th>
                             </tr>
                         </tfoot>
                         <tbody>
@@ -38,8 +40,22 @@
         <tr>
             <td><?= esc($class_item['class_name']) ?></td>
             <td><?= esc($class_item['year']) ?></td>
-            <td><?= esc($class_item['teacher_name']) ?></td>
-            <td><?= esc($class_item['number_of_students']) ?></td>                                
+            <td><?= esc($class_item['number_of_students']) ?></td>  
+            <td>
+                <?php
+                    if(esc($class_item['gender_id'])=='1'){
+                        echo 'Mr.';
+                    }
+                    else{
+                        echo 'Mrs./Miss.';
+                    }
+                ?>
+                <?= esc($class_item['first_name'])?>
+                 <?= esc($class_item['middle_name'])?>
+                 <?= esc($class_item['last_name'])?>
+            </td>
+            <td><?= esc($class_item['contact_number']) ?></td>  
+                                          
         </tr>                            
     <?php endforeach ?>
     </tbody>

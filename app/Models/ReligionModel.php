@@ -45,6 +45,6 @@ class ReligionModel extends Model
             return $this->findAll();
         }
 
-        return $this->where(['race_id' => $religion_id])->first();
+        return $this->where(['religion_id' => $religion_id])->first();
     }
 }
