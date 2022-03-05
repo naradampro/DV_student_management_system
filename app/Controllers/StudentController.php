@@ -59,14 +59,15 @@ public function create()
     ];
 
     if ($this->request->getMethod() === 'post' && $this->validate([
+        'full_name_en' => 'required|min_length[3]',
+        'full_name_sin' => 'required|min_length[3]',
         'first_name' => 'required|min_length[3]|max_length[50]',
-        'middle_name'  => 'required|min_length[3]|max_length[50]',
+        'name_with_initials'  => 'required|min_length[3]|max_length[50]',
         'last_name' => 'required|min_length[3]|max_length[50]',
         'student_index_number' => 'required',
         'date_of_addmission' => 'required',
         'student_insurance_number' => 'min_length[3]|max_length[50]',
         'student_identification_number' => 'required',
-        'contact_number' => 'required',
         'birthday' => 'required',
         'address' => 'required',
         'gender_id' => 'required',
@@ -78,14 +79,15 @@ public function create()
 
     ])) {
         $model->save([
+            'full_name_en' => $this->request->getPost('full_name_en'),
+            'full_name_sin' => $this->request->getPost('full_name_sin'),
             'first_name' => $this->request->getPost('first_name'), 
-            'middle_name'  => $this->request->getPost('middle_name'),
+            'name_with_initials'  => $this->request->getPost('name_with_initials'),
             'last_name' => $this->request->getPost('last_name'),
             'student_index_number' => $this->request->getPost('student_index_number'),
             'date_of_addmission' => $this->request->getPost('date_of_addmission'),
             'student_insurance_number' => $this->request->getPost('student_insurance_number'),
             'student_identification_number' => $this->request->getPost('student_identification_number'),
-            'contact_number' => $this->request->getPost('contact_number'),
             'birthday' => $this->request->getPost('birthday'),
             'address' => $this->request->getPost('address'),
             'gender_id' => $this->request->getPost('gender_id'),

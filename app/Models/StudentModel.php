@@ -8,6 +8,9 @@ class StudentModel extends Model
 {
     protected $table = 'student';
     protected $allowedFields = [
+        'full_name_en',
+        'full_name_sin',
+        'name_with_initials',
         'student_index_number', 
         'first_name', 
         'middle_name', 

@@ -10,14 +10,24 @@
 <?= csrf_field() ?>
 <label><strong>Student Name</strong></label><br>
         <div class="form-group row">
+            <div class="col-sm-12 mb-12 mb-sm-0">
+                <input type="text" class="form-control" id="full_name_en" placeholder="Full name in English capitals." name="full_name_en" oninput="this.value = this.value.toUpperCase()">
+            </div>
+        </div>
+        <div class="form-group row">
+            <div class="col-sm-12 mb-12 mb-sm-0">
+                <input type="text" class="form-control" id="full_name_sin" placeholder="සම්පුර්ණ නම සිංහලෙන් (Unicode)" name="full_name_sin">
+            </div>
+        </div>  
+        <div class="form-group row">
             <div class="col-sm-4 mb-4 mb-sm-0">
                 <input type="text" class="form-control" id="first_name" placeholder="First Name" name="first_name">
-            </div>
-            <div class="col-sm-4 mb-4 mb-sm-0">
-                <input type="text" class="form-control" id="middle_name" placeholder="Middle Name" name="middle_name">
-            </div>
+            </div>            
             <div class="col-sm-4 mb-4 mb-sm-0">
                 <input type="text" class="form-control" id="last_name" placeholder="Last Name" name="last_name">
+            </div>
+            <div class="col-sm-4 mb-4 mb-sm-0">
+                <input type="text" class="form-control" id="name_with_initials" placeholder="Name with initials" name="name_with_initials" oninput="this.value = this.value.toUpperCase()">
             </div>
         </div>
         <hr>
@@ -45,8 +55,6 @@
         <hr>
         <div class="form-group row">
             <div class="col-sm-6 mb-3 mb-sm-0">
-            <label><strong>Contact Number</strong></label><br>
-                <input type="tel" class="form-control" id="contact_number" placeholder="Contact Number" name="contact_number">
             </div>
             <div class="col-sm-6">
             <label><strong>Date Of Birth</strong></label><br>

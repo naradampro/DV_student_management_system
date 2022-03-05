@@ -37,7 +37,7 @@
     <?php foreach ($student as $student_item): ?>
         <tr>
             <td><?= esc($student_item['student_index_number']) ?></td>
-            <td><?= esc($student_item['first_name']) ?> <?= esc($student_item['middle_name']) ?> <?= esc($student_item['last_name']) ?></td>
+            <td><?= esc($student_item['first_name']) ?> <?= esc($student_item['last_name']) ?></td>
             <td><?= esc($student_item['address']) ?></td>
             <td><?= esc($student_item['birthday']) ?></td>                                
         </tr>                            
