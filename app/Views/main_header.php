@@ -82,7 +82,7 @@
 
             <!-- Nav Item - Subjects -->
             <li class="nav-item">
-                <a class="nav-link" href="<?= base_url() ?>/subjects">
+                <a class="nav-link" href="<?= base_url() ?>/subject">
                     <i class="fas fa-fw fa-book"></i>
                     <span>Subjects</span></a>
             </li>

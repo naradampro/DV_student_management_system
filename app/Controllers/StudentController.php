@@ -43,7 +43,7 @@ public function create()
 {
     $model = model(StudentModel::class);
     $race_model = model(RaceModel::class);
-    $medium_model = model(Mediummodel::class);
+    $medium_model = model(MediumModel::class);
     $class_model = model(ClassModel::class);
     $gnd_model = model(GramaNiladhariDivisionMOdel::class);
     $religion_model = model(ReligionModel::class);
