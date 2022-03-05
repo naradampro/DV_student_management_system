@@ -11,7 +11,8 @@ class Home extends BaseController
 
         $data = [
             'student_count'  => $student_model->getTotalActiveStudentsCount(),
-            'teacher_count' =>  $teacher_model->getTotalTeachersCount()
+            'teacher_count' =>  $teacher_model->getTotalTeachersCount(),
+            'student_count_by_gender' => $student_model->getStudentCountGroupByGender()
         ];
 
         echo view('main_header');

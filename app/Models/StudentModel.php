@@ -42,5 +42,9 @@ class StudentModel extends Model
         $query = db_connect()->query($sql);
         return $query->getResultArray();
     }
+    
+    public function getStudentCountGroupByGender(){
+        return db_connect()->query("CALL get_student_count_group_by_gender()")->getResultArray();
+    }
 
 }
