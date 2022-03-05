@@ -11,7 +11,7 @@
 <!-- Content Row -->
 <div class="row">
 
-    <!-- Earnings (Monthly) Card Example -->
+    <!-- Total active students count on dashboard -->
     <div class="col-xl-3 col-md-6 mb-4">
         <div class="card border-left-primary shadow h-100 py-2">
             <div class="card-body">
@@ -19,7 +19,7 @@
                     <div class="col mr-2">
                         <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
                             Total students</div>
-                        <div class="h5 mb-0 font-weight-bold text-gray-800">155</div>
+                        <div class="h5 mb-0 font-weight-bold text-gray-800"><?= esc($student_count[0]['count']) ?></div>
                     </div>
                     <div class="col-auto">
                         <i class="fas fa-users fa-2x text-gray-300"></i>
@@ -29,7 +29,7 @@
         </div>
     </div>
 
-    <!-- Earnings (Monthly) Card Example -->
+    <!-- Total active teachers count on dashboard -->
     <div class="col-xl-3 col-md-6 mb-4">
         <div class="card border-left-success shadow h-100 py-2">
             <div class="card-body">
@@ -37,7 +37,7 @@
                     <div class="col mr-2">
                         <div class="text-xs font-weight-bold text-success text-uppercase mb-1">
                             Total teachers</div>
-                        <div class="h5 mb-0 font-weight-bold text-gray-800">26</div>
+                        <div class="h5 mb-0 font-weight-bold text-gray-800"><?= esc($teacher_count[0]['count']) ?></div>
                     </div>
                     <div class="col-auto">
                         <i class="fas fa-chalkboard-teacher fa-2x text-gray-300"></i>

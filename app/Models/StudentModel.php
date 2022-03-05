@@ -34,13 +34,13 @@ class StudentModel extends Model
             return $this->findAll();
         }
 
-        return $this->where(['student_index_number' => $student_index_number])->first();
+        return db_connect()->query("CALL get_student_by_index_no(".$student_index_number.")")->getResultArray();
     }
 
-    public function rawgetall(){
-        $sql="Select * from ".$table;    
-        $query = $this->db->query($sql);
-        return $query->result_array();
+    public function getTotalActiveStudentsCount(){
+        $sql="CALL get_all_active_students_count()";    
+        $query = db_connect()->query($sql);
+        return $query->getResultArray();
     }
 
 }

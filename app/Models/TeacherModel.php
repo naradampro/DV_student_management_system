@@ -27,4 +27,10 @@ class TeacherModel extends Model
         return $this->where(['teacher_id' => $teacher_id])->first();
     }
 
+    public function getTotalTeachersCount(){
+        $sql="SELECT COUNT(*) as count FROM teacher";    
+        $query = db_connect()->query($sql);
+        return $query->getResultArray();
+    }
+
 }
