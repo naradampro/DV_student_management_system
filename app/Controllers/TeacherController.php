@@ -70,9 +70,7 @@ public function create()
             'birthday' => $this->request->getPost('birthday'),
             'address' => $this->request->getPost('address'),
             'gender_id' => $this->request->getPost('gender_id'),
-            'teacher_grade_id' => $this->request->getPost('teacher_grade_id'),
-            'subject_id' => $this->request->getPost('subject_id'),
-            'medium_id' => $this->request->getPost('medium_id'),
+            'teacher_grade_id' => $this->request->getPost('teacher_grade_id'), 
         ]);
         
         return redirect()->to('/teacher');

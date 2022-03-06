@@ -21,8 +21,8 @@
                             <tr>
                                 <th>Class Name</th>
                                 <th>Year</th>
-                                <th>Class Teacher</th>
                                 <th>Number Of Students</th>
+                                <th>Class Teacher</th>
                                 <th>Teacher Contact No.</th>
                             </tr>
                         </thead>
@@ -30,8 +30,8 @@
                             <tr>
                                 <th>Class Name</th>
                                 <th>Year</th>
-                                <th>Class Teacher</th>
                                 <th>Number Of Students</th>
+                                <th>Class Teacher</th>
                                 <th>Teacher Contact No.</th>
                             </tr>
                         </tfoot>

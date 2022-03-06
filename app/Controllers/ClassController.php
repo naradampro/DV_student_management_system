@@ -41,40 +41,33 @@ class ClassController extends BaseController
     public function create()
     {
         $model = model(classModel::class);
+        $teacher_model = model(TeacherModel::class);
+
+        $data = [
+            'class'  => $model->getClassData(),
+            'title' => 'Class Details',
+            'teachers_data' => $teacher_model->getTeacherDetails()
+        ];
     
-        // if ($this->request->getMethod() === 'post' && $this->validate([
-        //     'first_name' => 'required|min_length[3]|max_length[50]',
-        //     'middle_name'  => 'required|min_length[3]|max_length[50]',
-        //     'last_name' => 'required|min_length[3]|max_length[50]',
-        //     'nic' => 'required',
-        //     'contact_number' => 'required',
-        //     'birthday' => 'required',
-        //     'address' => 'required',
-        //     'gender' => 'required',
-        //     'teacher_grade_id' => 'required',
-        //     'subject_id' => 'required', 
-        //     'medium_id' => 'required',
+        if ($this->request->getMethod() === 'post' && $this->validate([
+            'class_name' => 'required',
+            'year'  => 'required',
+            'number_of_students' => 'required'
     
-        // ])) {
-        //     $model->save([
-        //         'first_name' => $this->request->getPost('first_name'), 
-        //         'middle_name'  => $this->request->getPost('middle_name'),
-        //         'last_name' => $this->request->getPost('last_name'),
-        //         'nic' => $this->request->getPost('nic'), 
-        //         'contact_number' => $this->request->getPost('contact_number'),
-        //         'birthday' => $this->request->getPost('birthday'),
-        //         'address' => $this->request->getPost('address'),
-        //         'gender' => $this->request->getPost('gender'),
-        //         'teacher_grade_id' => $this->request->getPost('teacher_grade_id'),
-        //         'subject_id' => $this->request->getPost('subject_id'),
-        //         'medium_id' => $this->request->getPost('medium_id'),
-        //     ]);
+        ])) {
+            $model->save([
+                'class_name' => $this->request->getPost('class_name'), 
+                'year'  => $this->request->getPost('year'),
+                'number_of_students' => $this->request->getPost('number_of_students'),
+                'teacher_id' => $this->request->getPost('teacher_id'),  
+            ]);
     
-        //     echo view('teacher/success');
-        // } else {
+            return redirect()->to('/class');
+
+        } else {
             echo view('main_header');
-            echo view('class/add_class_form');
+            echo view('class/add_class_form',$data);
             echo view('main_footer');
-        // }
+        }
     }
 }

@@ -46,8 +46,8 @@ class SubjectController extends BaseController{
     ];
 
         if ($this->request->getMethod() === 'post' && $this->validate([
-            'subject_name' => 'required',
-            'medium_name' => 'required'
+            'subject_name' => 'required'
+             
         ])) {
 
             $model->save([

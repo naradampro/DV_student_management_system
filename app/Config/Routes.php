@@ -50,6 +50,10 @@ $routes->match(['get', 'post'], 'class/add_class_form/', 'ClassController::creat
 //routes for subject managemant
 $routes->get('subject', 'SubjectController::index');
 $routes->match(['get', 'post'], 'subject/add_subject_form/', 'SubjectController::create');
+ 
+//routes for guardian managemant
+$routes->get('guardian', 'GuardianController::index');
+$routes->match(['get', 'post'], 'guardian/add_guardian_form/', 'GuardianController::create');
 
 //routes for for temporary dev purposes
 $routes->get('devforms/', 'Home::devforms');

@@ -86,6 +86,13 @@
                     <i class="fas fa-fw fa-book"></i>
                     <span>Subjects</span></a>
             </li>
+
+             <!-- Nav Item - Subjects -->
+             <li class="nav-item">
+                <a class="nav-link" href="<?= base_url() ?>/guardian">
+                    <i class="fas fa-fw fa-users"></i>
+                    <span>Guardian</span></a>
+            </li>
             
             <!-- Divider -->
             <hr class="sidebar-divider d-none d-md-block">

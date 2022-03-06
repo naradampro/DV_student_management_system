@@ -24,9 +24,9 @@
             <div class="input-group mb-3">
                 <select class="custom-select" id="teacher_id" name="teacher_id">
                     <option selected>Choose Teacher</option>
-                    <option value="1">One</option>
-                    <option value="2">Two</option>
-                    <option value="3">Three</option>
+                    <?php foreach ($teachers_data as $item): ?>
+                        <option value="<?=esc($item["teacher_id"])?>"><?=esc($item["first_name"])?> <?=esc($item["middle_name"])?> <?=esc($item["last_name"])?></option>
+                    <?php endforeach ?>
                 </select> 
             </div>
         </div>

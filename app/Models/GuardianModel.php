@@ -4,10 +4,10 @@ namespace App\Models;
 
 use CodeIgniter\Model;
 
-class ClassModel extends Model
+class GuardianModel extends Model
 {
     protected $DBGroup          = 'default';
-    protected $table            = 'class';
+    protected $table            = 'trustee';
     protected $primaryKey       = 'id';
     protected $useAutoIncrement = true;
     protected $insertID         = 0;
@@ -15,10 +15,14 @@ class ClassModel extends Model
     protected $useSoftDeletes   = false;
     protected $protectFields    = true;
     protected $allowedFields    = [
-        'class_name',  
-        'year',
-        'number_of_students',
-        'teacher_id'
+        'trustee_name', 
+        'nic', 
+        'mobile_number', 
+        'work_place_phone_number', 
+        'resident_phone_number', 
+        'address',
+        'occupation',
+        'gender_id'
     ];
 
     // Dates
@@ -45,11 +49,14 @@ class ClassModel extends Model
     protected $beforeDelete   = [];
     protected $afterDelete    = [];
 
-    public function getClassData($class_id = false){
-        if ($class_id === false) {
-            return db_connect()->query("SELECT class_name,year,first_name,middle_name,Last_name,number_of_students,gender_id,contact_number FROM class_with_teacher")->getResultArray();
+
+    public function getGuardianDetails($trustee_id = false){
+        if ($trustee_id === false) {
+            return $this->findAll();
         }
 
-        return $this->where(['class_id' => $class_id])->first();
+        return $this->where(['trustee_id' => $trustee_id])->first();
     }
+
+    
 }
