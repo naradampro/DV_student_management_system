@@ -87,11 +87,18 @@
                     <span>Subjects</span></a>
             </li>
 
-             <!-- Nav Item - Subjects -->
+             <!-- Nav Item - Guardian -->
              <li class="nav-item">
                 <a class="nav-link" href="<?= base_url() ?>/guardian">
                     <i class="fas fa-fw fa-users"></i>
                     <span>Guardian</span></a>
+            </li>
+
+            <!-- Nav Item - Exam -->
+            <li class="nav-item">
+                <a class="nav-link" href="<?= base_url() ?>/exam">
+                    <i class="fas fa-fw fa-users"></i>
+                    <span>Exam</span></a>
             </li>
             
             <!-- Divider -->

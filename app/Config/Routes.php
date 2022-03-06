@@ -59,6 +59,11 @@ $routes->match(['get', 'post'], 'guardian/add_guardian_form/', 'GuardianControll
 $routes->get('devforms/', 'Home::devforms');
 
 $routes->get('(:any)', 'Forms::view/$1');
+ 
+//routes for exam management
+$routes->get('exam', 'ExamController::index');
+$routes->match(['get', 'post'], 'exam/exam_details_form/', 'ExamController::create');
+
 
 
 /*

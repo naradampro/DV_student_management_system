@@ -3,8 +3,11 @@
 
 <!-- Page Heading -->
 <h1 class="h3 mb-4 text-gray-800">Exam Details Form</h1>
+<?= session()->getFlashdata('error')?>
+<?= service('validation')->listErrors()?>
 
-<form class="user">
+<form class="user" action="/exam/exam_details_form" method="post">
+    <?=csrf_field()?>
     <div class="form-group row">
         <!-- Term -->
         <div class="col-sm-4 mb-3 mb-sm-0">
@@ -62,10 +65,10 @@
             </label><br>
             <div class="input-group mb-3">
                 <select class="custom-select" id="subject_id" name="subject_id">
-                    <option selected>Choose Subject</option>
-                    <option value="1">One</option>
-                    <option value="2">Two</option>
-                    <option value="3">Three</option>
+                    <option selected>Choose Subject</option> 
+                    <?php foreach ($subject_data as $item): ?>
+                        <option value="<?=esc($item["subject_id"])?>"><?=esc($item["subject_name"])?></option>
+                    <?php endforeach ?>
                 </select>  
             </div>
         </div>
@@ -78,9 +81,9 @@
             <div class="input-group mb-3">
                 <select class="custom-select" id="medium_id" name="medium_id">
                     <option selected>Choose Medium</option>
-                    <option value="1">One</option>
-                    <option value="2">Two</option>
-                    <option value="3">Three</option>
+                    <?php foreach ($medium_data as $item): ?>
+                        <option value="<?=esc($item["medium_id"])?>"> <?=esc($item["medium_name"])?></option>
+                    <?php endforeach ?>
                 </select>  
             </div>
         </div>
