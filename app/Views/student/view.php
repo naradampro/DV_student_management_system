@@ -1,2 +1,10 @@
-<h2><?= esc($student['student_index_number']) ?></h2>
-<p><?= esc($student['first_name']) ?></p> 
+<table>
+
+<?php
+    foreach ($student[0] as $key => $value) {
+        echo "<tr><td>".$key."</td><td>".$value."</td></tr>";
+    }
+?>
+
+
+</table>

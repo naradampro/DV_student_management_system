@@ -47,7 +47,7 @@ class ClassModel extends Model
 
     public function getClassData($class_id = false){
         if ($class_id === false) {
-            return db_connect()->query("SELECT class_name,year,first_name,middle_name,Last_name,number_of_students,gender_id,contact_number FROM class_with_teacher")->getResultArray();
+            return db_connect()->query("SELECT class_id,class_name,year,first_name,middle_name,Last_name,number_of_students,gender_id,contact_number FROM class_with_teacher")->getResultArray();
         }
 
         return $this->where(['class_id' => $class_id])->first();

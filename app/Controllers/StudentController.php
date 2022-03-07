@@ -20,23 +20,21 @@ class StudentController extends BaseController
     echo view('main_footer', $data);
 }
 
-public function view($sudent_index_number = null)
+public function view($student_index_number = null)
 {
     $model = model(StudentModel::class);
-
-    $data['student'] = $model->rawgetall();
     
-    //$data['student'] = $model->getStudentDetails($sudent_index_number);
+    $data['student'] = $model->getStudentDetails($student_index_number);
 
     if (empty($data['student'])) {
-        throw new \CodeIgniter\Exceptions\PageNotFoundException('Cannot find the student item: ' . $sudent_index_number);
+        throw new \CodeIgniter\Exceptions\PageNotFoundException('Cannot find the student item: ' . $student_index_number);
     }
 
-    //$data['sudent_index_number'] = $data['student']['sudent_index_number'];
+    $data['student_index_number'] = $data['student'][0]['student_index_number'];
 
-    echo view('main_header', $data);
+    echo view('main_header');
     echo view('student/view', $data);
-    echo view('main_footer', $data);
+    echo view('main_footer');
 }
 
 public function create()

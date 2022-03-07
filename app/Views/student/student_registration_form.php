@@ -81,7 +81,7 @@
                         <select class="custom-select" id="race_id" name="race_id">                        
                             <option selected>Choose the race</option>
                             <?php foreach ($race_data as $item): ?>
-                            <option value="<?=$item["race_id"]?>"><?=$item["race_name"]?></option>
+                            <option value="<?=esc($item["race_id"])?>"><?=esc($item["race_name"])?></option>
                             <?php endforeach ?>
                         </select> 
                     </div>
@@ -93,7 +93,7 @@
                         <select class="custom-select" id="religion_id" name="religion_id">
                             <option selected>Choose Religion</option>
                             <?php foreach ($religion_data as $item): ?>
-                            <option value="<?=$item["religion_id"]?>"><?=$item["religion_name"]?></option>
+                            <option value="<?=esc($item["religion_id"])?>"><?=esc($item["religion_name"])?></option>
                             <?php endforeach ?>
                         </select> 
                     </div>
@@ -106,7 +106,7 @@
                         <select class="custom-select" id="gnd_id" name="gnd_id">
                             <option selected>Choose Grama Niladhari Division</option>
                             <?php foreach ($gnd_data as $item): ?>
-                            <option value="<?=$item["gnd_id"]?>"><?=$item["gnd_name"]?></option>
+                            <option value="<?=esc($item["gnd_id"])?>"><?=esc($item["gnd_name"])?> <?=esc($item["gnd_number"])?></option>
                             <?php endforeach ?>
                         </select> 
                     </div>
@@ -117,7 +117,7 @@
                         <select class="custom-select" id="class_id" name="class_id">
                             <option selected>Choose Class</option>
                             <?php foreach ($class_data as $item): ?>
-                            <option value="<?=$item["class_id"]?>"><?=$item["class_name"]?></option>
+                            <option value="<?=esc($item["class_id"])?>"><?=esc($item["year"])?> Grade <?=esc($item["class_name"])?></option>
                             <?php endforeach ?>
                         </select> 
                     </div>
