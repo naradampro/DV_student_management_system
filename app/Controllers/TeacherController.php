@@ -53,7 +53,7 @@ public function create()
         'first_name' => 'required|min_length[3]|max_length[50]',
         'middle_name'  => 'required|min_length[3]|max_length[50]',
         'last_name' => 'required|min_length[3]|max_length[50]',
-        'nic' => 'required',
+        'teacher_nic' => 'required',
         'contact_number' => 'required',
         'birthday' => 'required',
         'address' => 'required',
@@ -65,7 +65,7 @@ public function create()
             'first_name' => $this->request->getPost('first_name'), 
             'middle_name'  => $this->request->getPost('middle_name'),
             'last_name' => $this->request->getPost('last_name'),
-            'nic' => $this->request->getPost('nic'), 
+            'teacher_nic' => $this->request->getPost('teacher_nic'), 
             'contact_number' => $this->request->getPost('contact_number'),
             'birthday' => $this->request->getPost('birthday'),
             'address' => $this->request->getPost('address'),
@@ -81,4 +81,44 @@ public function create()
         echo view('main_footer',$data);
     }
 }
+
+public function edit($teacher_id){
+
+    $model = model(TeacherModel::class);
+    $teacher_grade_model = model(TeacherGradeModel::class);
+
+    $data = [
+        'grades' => $teacher_grade_model->getTeacherGradeData(),
+        'teacher'  => $model->find($teacher_id)       
+    ];
+
+    echo view('main_header');
+    echo view('teacher/teacher_edit', $data);
+    echo view('main_footer');
+
+}
+
+public function update($teacher_id){
+
+    $model = model(TeacherModel::class);
+    $teacher_grade_model = model(TeacherGradeModel::class);
+    
+    $data = [
+        'first_name' => $this->request->getPost('first_name'), 
+        'middle_name'  => $this->request->getPost('middle_name'),
+        'last_name' => $this->request->getPost('last_name'),
+        'teacher_nic' => $this->request->getPost('teacher_nic'), 
+        'contact_number' => $this->request->getPost('contact_number'),
+        'birthday' => $this->request->getPost('birthday'),
+        'address' => $this->request->getPost('address'),
+        'gender_id' => $this->request->getPost('gender_id'),
+        'teacher_grade_id' => $this->request->getPost('teacher_grade_id'),        
+    ];
+
+    $model->update($teacher_id, $data);
+
+    return redirect()->to('/teacher');
+
+}
+
 }

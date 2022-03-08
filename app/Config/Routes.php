@@ -41,6 +41,8 @@ $routes->get('student/(:segment)', 'StudentController::view/$1');
 //routes for teacher managemant
 $routes->get('teacher', 'TeacherController::index');
 $routes->match(['get', 'post'], 'teacher/add_teacher_form/', 'TeacherController::create');
+$routes->get('teacher/edit/(:segment)', 'TeacherController::edit/$1');
+$routes->post('teacher/update/(:segment)', 'TeacherController::update/$1');
 //$routes->get('teacher/(:segment)', 'TeacherController::view/$1');
 
 //routes for class managemant

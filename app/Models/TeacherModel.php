@@ -6,9 +6,9 @@ use CodeIgniter\Model;
 
 class TeacherModel extends Model
 {
-    protected $table = 'teacher'; 
+    protected $table = 'teacher';
+    protected $primaryKey = 'teacher_id'; 
     protected $allowedFields = [
-        'teacher_id', 
         'teacher_nic', 
         'birthday', 
         'gender_id', 
