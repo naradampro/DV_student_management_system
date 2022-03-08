@@ -92,6 +92,10 @@ public function edit($teacher_id){
         'teacher'  => $model->find($teacher_id)       
     ];
 
+    if (empty($data['teacher'])) {
+        throw new \CodeIgniter\Exceptions\PageNotFoundException('Cannot find the teacher item: ' . $teacher_id);
+    }
+
     echo view('main_header');
     echo view('teacher/teacher_edit', $data);
     echo view('main_footer');
