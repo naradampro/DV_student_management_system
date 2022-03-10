@@ -115,7 +115,7 @@
         </div>
 
         <!-- Donut Chart -->
-        <div class="col-xl-8 col-lg-8">
+        <div class="col-xl-8 col-lg-7">
             <div class="card shadow mb-4">
                 <!-- Card Header - Dropdown -->
                 <div class="card-header py-3">
@@ -199,7 +199,7 @@ var myBarChart = new Chart(ctx, {
         ticks: {
           maxTicksLimit: 6
         },
-        maxBarThickness: 25,
+        maxBarThickness: 60,
       }],
       yAxes: [{
         ticks: {
@@ -278,8 +278,7 @@ var myPieChart = new Chart(ctx, {
     },
     legend: {
       display: true
-    },
-    cutoutPercentage: 80,
+    }
   },
 });
 </script>
