@@ -1,10 +1,4 @@
-<table>
-<?php
-    // foreach ($teacher[0] as $key => $value) {
-    //     echo "<tr><td>$key</td><td><?=esc(\$teacher[0]['".$key."'])?></td></tr>\n";
-    // }
-?>
-</table>
+
  <!-- Begin Page Content -->
  <div class="container-fluid">
 
