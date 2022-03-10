@@ -23,8 +23,9 @@ class TeacherModel extends Model
         if ($teacher_id === false) {
             return $this->findAll();
         }
-
-        return $this->where(['teacher_id' => $teacher_id])->first();
+       
+        return db_connect()->query(" CALL get_teacher_data_by_id(".$teacher_id.");")->getResultArray();
+        
     }
 
     public function getTotalTeachersCount(){

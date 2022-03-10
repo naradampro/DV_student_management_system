@@ -7,7 +7,7 @@ use CodeIgniter\Model;
 class ExamModel extends Model
 {
     protected $DBGroup          = 'default';
-    protected $table            = 'exams';
+    protected $table            = 'exam';
     protected $primaryKey       = 'id';
     protected $useAutoIncrement = true;
     protected $insertID         = 0;

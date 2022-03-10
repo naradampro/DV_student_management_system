@@ -20,23 +20,22 @@ class ClassController extends BaseController
         echo view('main_footer', $data);
     }
     
-    // public function view($teacher_id = null)
-    // {
-    //     $model = model(classModel::class);
+    public function view($class_id = null)
+    {
+        $model = model(classModel::class);
     
-    //      $data['teacher'] = $model->rawgetall();
-    //     //$data['student'] = $model->getTeacherDetails($teacher_id);
+         $data['class'] = $model->getClassData($class_id); 
     
-    //     if (empty($data['teacher'])) {
-    //         throw new \CodeIgniter\Exceptions\PageNotFoundException('Cannot find the teacher item: ' . $teacher_id);
-    //     }
+        if (empty($data['class'])) {
+            throw new \CodeIgniter\Exceptions\PageNotFoundException('Cannot find the class item: ' . $class_id);
+        }
     
-    //     //$data['sudent_index_number'] = $data['student']['sudent_index_number'];
+        $data['class_name'] = $data['class'][0]['class_name'];
     
-    //     echo view('main_header', $data);
-    //     echo view('teacher/teacher_view', $data);
-    //     echo view('main_footer', $data);
-    // }
+        echo view('main_header' );
+        echo view('class/class_view', $data);
+        echo view('main_footer' );
+    }
     
     public function create()
     {

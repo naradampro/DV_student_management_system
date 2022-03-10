@@ -43,11 +43,12 @@ $routes->get('teacher', 'TeacherController::index');
 $routes->match(['get', 'post'], 'teacher/add_teacher_form/', 'TeacherController::create');
 $routes->get('teacher/edit/(:segment)', 'TeacherController::edit/$1');
 $routes->post('teacher/update/(:segment)', 'TeacherController::update/$1');
-//$routes->get('teacher/(:segment)', 'TeacherController::view/$1');
+$routes->get('teacher/(:segment)', 'TeacherController::view/$1');
 
 //routes for class managemant
 $routes->get('class', 'ClassController::index');
 $routes->match(['get', 'post'], 'class/add_class_form/', 'ClassController::create');
+$routes->get('class/(:segment)', 'ClassController::view/$1');
 
 //routes for subject managemant
 $routes->get('subject', 'SubjectController::index');
@@ -64,7 +65,7 @@ $routes->get('(:any)', 'Forms::view/$1');
  
 //routes for exam management
 $routes->get('exam', 'ExamController::index');
-$routes->match(['get', 'post'], 'exam/exam_details_form/', 'ExamController::create');
+//$routes->match(['get', 'post'], 'exam/exam_details_form/', 'ExamController::create');
 
 
 

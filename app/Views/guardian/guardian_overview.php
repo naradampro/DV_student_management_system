@@ -22,6 +22,7 @@
                                 <th>Name</th>
                                 <th>Address</th>
                                 <th>Occupation</th>
+                                <th>Action</th>
                             </tr>
                         </thead>
                         <tfoot>
@@ -29,6 +30,7 @@
                                 <th>Name</th>
                                 <th>Address</th>
                                 <th>Occupation</th>
+                                <th>Action</th>
                             </tr>
                         </tfoot>
                         <tbody>
@@ -36,7 +38,8 @@
         <tr> 
             <td><?= esc($trustee_item['trustee_name']) ?></td>
             <td><?= esc($trustee_item['address']) ?></td>
-            <td><?= esc($trustee_item['occupation']) ?></td>                                
+            <td><?= esc($trustee_item['occupation']) ?></td> 
+            <td><a href="<?=base_url()?>/guardian/<?=esc($trustee_item['trustee_id'])?>">View</a></td>                                
         </tr>                            
     <?php endforeach ?>
     </tbody>

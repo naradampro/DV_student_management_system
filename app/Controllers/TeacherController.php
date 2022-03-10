@@ -24,18 +24,17 @@ public function view($teacher_id = null)
 {
     $model = model(TeacherModel::class);
 
-    //$data['teacher'] = $model->getTeacherDetails();
-    //$data['student'] = $model->getTeacherDetails($teacher_id);
+    $data['teacher'] = $model->getTeacherDetails($teacher_id);
 
     if (empty($data['teacher'])) {
         throw new \CodeIgniter\Exceptions\PageNotFoundException('Cannot find the teacher item: ' . $teacher_id);
     }
 
-    //$data['sudent_index_number'] = $data['student']['sudent_index_number'];
+    $data['teacher_id'] = $data['teacher'][0]['teacher_id'];
 
-    echo view('main_header', $data);
+    echo view('main_header');
     echo view('teacher/teacher_view', $data);
-    echo view('main_footer', $data);
+    echo view('main_footer');
 }
 
 public function create()
