@@ -115,15 +115,15 @@
         </div>
 
         <!-- Donut Chart -->
-        <div class="col-xl-4 col-lg-5">
+        <div class="col-xl-8 col-lg-8">
             <div class="card shadow mb-4">
                 <!-- Card Header - Dropdown -->
                 <div class="card-header py-3">
-                    <h6 class="m-0 font-weight-bold text-primary">Donut Chart</h6>
+                    <h6 class="m-0 font-weight-bold text-primary">Number of students by sections</h6>
                 </div>
                 <!-- Card Body -->
                 <div class="card-body">
-                    <div class="chart-pie pt-4">
+                    <div class="chart-pie pt-4">                  
                         <canvas id="myPieChart"></canvas>
                     </div>
                 </div>
@@ -240,6 +240,47 @@ var myBarChart = new Chart(ctx, {
       }
     },
   }
+});
+</script>
+<script>
+  // Set new default font family and font color to mimic Bootstrap's default styling
+Chart.defaults.global.defaultFontFamily = 'Nunito', '-apple-system,system-ui,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif';
+Chart.defaults.global.defaultFontColor = '#858796';
+
+                        
+                        
+// Pie Chart Example
+var ctx = document.getElementById("myPieChart");
+var myPieChart = new Chart(ctx, {
+  type: 'doughnut',
+  data: {
+    labels: ["Grade 1 - 5", "Grade 6 - 9", "Grade 10 - 11"],
+    datasets: [{
+      data: [<?= esc($count_1to5_students[0]['COUNT']) ?>,
+            <?= esc($count_6to9_students[0]['COUNT']) ?>,
+            <?= esc($count_10to11_students[0]['COUNT']) ?>],
+      backgroundColor: ['#4e73df', '#1cc88a', '#36b9cc'],
+      hoverBackgroundColor: ['#2e59d9', '#17a673', '#2c9faf'],
+      hoverBorderColor: "rgba(234, 236, 244, 1)",
+    }],
+  },
+  options: {
+    maintainAspectRatio: false,
+    tooltips: {
+      backgroundColor: "rgb(255,255,255)",
+      bodyFontColor: "#858796",
+      borderColor: '#dddfeb',
+      borderWidth: 1,
+      xPadding: 15,
+      yPadding: 15,
+      displayColors: true,
+      caretPadding: 10,
+    },
+    legend: {
+      display: true
+    },
+    cutoutPercentage: 80,
+  },
 });
 </script>
 

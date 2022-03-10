@@ -47,4 +47,16 @@ class StudentModel extends Model
         return db_connect()->query("CALL get_student_count_group_by_gender()")->getResultArray();
     }
 
+    public function get1to5StudentCount(){
+        return db_connect()->query("CALL get_1_to_5_student_count()")->getResultArray();
+    }
+
+    public function get6to9StudentCount(){
+        return db_connect()->query("CALL get_6_to_9_student_count()")->getResultArray();
+    }
+
+    public function get10to11StudentCount(){
+        return db_connect()->query("CALL get_10_to_11_student_count()")->getResultArray();
+    }
+
 }
