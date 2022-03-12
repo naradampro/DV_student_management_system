@@ -6,7 +6,7 @@ use App\Models\StudentModel;
 
 class StudentController extends BaseController
 {
-    public function index()
+public function index()
 {
     $model = model(StudentModel::class);
 
@@ -17,6 +17,20 @@ class StudentController extends BaseController
 
     echo view('main_header', $data);
     echo view('student/overview', $data);
+    echo view('main_footer', $data);
+}
+
+public function all_view()
+{
+    $model = model(StudentModel::class);
+
+    $data = [
+        'student'  => $model->getAllStudentsDetails(),
+        'title' => ' All Student Details',
+    ];
+
+    echo view('main_header', $data);
+    echo view('student/all_students', $data);
     echo view('main_footer', $data);
 }
 

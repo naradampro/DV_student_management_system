@@ -36,6 +36,7 @@ $routes->get('/', 'Home::index');
 //routes for student management
 $routes->get('student', 'StudentController::index');
 $routes->match(['get', 'post'], 'student/student_registration_form/', 'StudentController::create');
+$routes->match(['get', 'post'], 'student/all_students/', 'StudentController::all_view');
 $routes->get('student/(:segment)', 'StudentController::view/$1');
 
 //routes for teacher managemant

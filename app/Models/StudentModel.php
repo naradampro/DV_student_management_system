@@ -29,10 +29,15 @@ class StudentModel extends Model
         'medium_id',
         'student_status_id'];
 
+    public function getAllStudentsDetails($student_index_number = false){
+        if ($student_index_number === false) { 
+            return $this->findAll(); 
+        } 
+    }
+
     public function getStudentDetails($student_index_number = false){
         if ($student_index_number === false) {
-            return $this->findAll();
-        }
+            return db_connect()->query("CALL get_active_students_all_data()")->getResultArray();        }
 
         return db_connect()->query("CALL get_student_by_index_no(".$student_index_number.")")->getResultArray();
     }
