@@ -69,4 +69,42 @@ class ClassController extends BaseController
             echo view('main_footer');
         }
     }
+
+    public function edit($class_id){
+
+        $model = model(ClassModel::class);
+        $teacher_model = model(TeacherModel::class);
+    
+        $data = [
+            'teachers_data' => $teacher_model->getTeacherDetails(),
+            'class'  => $model->find($class_id)       
+        ];
+    
+        if (empty($data['class'])) {
+            throw new \CodeIgniter\Exceptions\PageNotFoundException('Cannot find the class item: ' . $class_id);
+        }
+    
+        echo view('main_header');
+        echo view('class/class_edit', $data);
+        echo view('main_footer');
+    
+    }
+    
+    public function update($class_id){
+    
+        $model = model(ClassModel::class);
+        $teacher_model = model(TeacherModel::class);
+        
+        $data = [
+            'class_name' => $this->request->getPost('class_name'), 
+            'year'  => $this->request->getPost('year'),
+            'number_of_students' => $this->request->getPost('number_of_students'),
+            'teacher_id' => $this->request->getPost('teacher_id')       
+        ];
+    
+        $model->update($class_id, $data);
+    
+        return redirect()->to('/class');
+    
+    }
 }

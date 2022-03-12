@@ -22,7 +22,7 @@
                                 <th>Name</th>
                                 <th>Address</th>
                                 <th>Birthday</th>
-                                <th>Actions</th>
+                                <th colspan="2">Actions</th>
                             </tr>
                         </thead>
                         <tfoot>
@@ -30,7 +30,7 @@
                                 <th>Name</th>
                                 <th>Address</th>
                                 <th>Birthday</th>
-                                <th>Actions</th>
+                                <th colspan="2">Actions</th>
                             </tr>
                         </tfoot>
                         <tbody>
@@ -39,10 +39,8 @@
             <td><?= esc($teacher_item['first_name']) ?> <?= esc($teacher_item['last_name']) ?></td>
             <td><?= esc($teacher_item['address']) ?></td>
             <td><?= esc($teacher_item['birthday']) ?></td>
-            <td>
-                <a href="<?=base_url()?>/teacher/<?=esc($teacher_item['teacher_id'])?>">View</a> &nbsp&nbsp&nbsp&nbsp
-                <a href="<?= base_url('teacher/edit/'.$teacher_item['teacher_id']) ?>">Edit</a>
-            </td>                                
+            <td><a href="<?=base_url()?>/teacher/<?=esc($teacher_item['teacher_id'])?>">View</a></td>
+            <td><a href="<?= base_url()?>/teacher/edit/<?=esc($teacher_item['teacher_id']) ?>">Edit</a></td>                                
         </tr>                            
     <?php endforeach ?>
     </tbody>

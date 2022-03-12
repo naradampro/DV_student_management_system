@@ -24,7 +24,7 @@
                                 <th>Number Of Students</th>
                                 <th>Class Teacher</th>
                                 <th>Teacher Contact No.</th>
-                                <th>View</th>
+                                <th colspan="2">Actions</th>
                             </tr>
                         </thead>
                         <tfoot>
@@ -34,7 +34,7 @@
                                 <th>Number Of Students</th>
                                 <th>Class Teacher</th>
                                 <th>Teacher Contact No.</th>
-                                <th>View</th>
+                                <th colspan="2">Actions</th>
                             </tr>
                         </tfoot>
                         <tbody>
@@ -57,8 +57,8 @@
                  <?= esc($class_item['last_name'])?>
             </td>
             <td><?= esc($class_item['contact_number']) ?></td>  
-            
-            <td><a href="<?=base_url()?>/class/<?=esc($class_item['class_name'])?>">view</a></td>    
+            <td><a href="<?=base_url()?>/class/<?=esc($class_item['class_id'])?>">View</a></td>
+            <td><a href="<?= base_url()?>/class/edit/<?=esc($class_item['class_id']) ?>">Edit</a></td>    
                                           
         </tr>                            
     <?php endforeach ?>

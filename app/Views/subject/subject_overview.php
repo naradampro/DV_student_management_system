@@ -21,19 +21,23 @@
                             <tr>
                                 <th>Subject Name</th>
                                 <th>Medium</th>
+                                <th colspan="2">Actions</th>
                             </tr>
                         </thead>
                         <tfoot>
                             <tr>
                                 <th>Subject Name</th>
                                 <th>Medium</th>
+                                <th colspan="2">Actions</th>
                             </tr>
                         </tfoot>
                         <tbody>
     <?php foreach ($subject as $subject_item): ?>
         <tr>
             <td><?= esc($subject_item['subject_name']) ?></td>
-            <td><?= esc($subject_item['medium_name']) ?></td>                            
+            <td><?= esc($subject_item['medium_name']) ?></td>
+            <td><a href="<?=base_url()?>/subject/<?=esc($subject_item['subject_id'])?>">View</a></td>
+            <td><a href="<?= base_url()?>/subject/edit/<?=esc($subject_item['subject_id']) ?>">Edit</a></td>                            
         </tr>                            
     <?php endforeach ?>
     </tbody>

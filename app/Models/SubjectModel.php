@@ -7,6 +7,7 @@ use CodeIgniter\Model;
 class SubjectModel extends Model{
 
     protected $table = 'subject';
+    protected $primaryKey = 'subject_id';
     protected $allowedFields = [
         'subject_name',
         'medium_id'];

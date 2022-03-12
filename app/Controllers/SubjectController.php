@@ -63,5 +63,41 @@ class SubjectController extends BaseController{
             echo view('main_footer');
         }
     }
+
+    public function edit($subject_id){
+
+        $model = model(TeacherModel::class);
+        $medium_model = model(MediumModel::class);
+    
+        $data = [
+            'medium_data' => $medium_model->getMediumData(),
+            'subject'  => $model->find($subject_id)       
+        ];
+    
+        if (empty($data['subject'])) {
+            throw new \CodeIgniter\Exceptions\PageNotFoundException('Cannot find the subject item: ' . $subject_id);
+        }
+    
+        echo view('main_header');
+        echo view('subject/subject_edit', $data);
+        echo view('main_footer');
+    
+    }
+    
+    public function update($subject_id){
+    
+        $model = model(SubjectModel::class);
+        $medium_model = model(MediumModel::class);
+        
+        $data = [
+            'subject_name' => $this->request->getPost('subject_name'),
+            'medium_id' => $this->request->getPost('medium_id')       
+        ];
+    
+        $model->update($subject_id, $data);
+    
+        return redirect()->to('/subject');
+    
+    }
 }
     

@@ -50,10 +50,14 @@ $routes->get('teacher/(:segment)', 'TeacherController::view/$1');
 $routes->get('class', 'ClassController::index');
 $routes->match(['get', 'post'], 'class/add_class_form/', 'ClassController::create');
 $routes->get('class/(:segment)', 'ClassController::view/$1');
+$routes->get('class/edit/(:segment)', 'ClassController::edit/$1');
+$routes->post('class/update/(:segment)', 'ClassController::update/$1');
 
 //routes for subject managemant
 $routes->get('subject', 'SubjectController::index');
 $routes->match(['get', 'post'], 'subject/add_subject_form/', 'SubjectController::create');
+$routes->get('subject/edit/(:segment)', 'SubjectController::edit/$1');
+$routes->post('subject/update/(:segment)', 'SubjectController::update/$1');
  
 //routes for guardian managemant
 $routes->get('guardian', 'GuardianController::index');
