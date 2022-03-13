@@ -8,7 +8,7 @@ class GuardianModel extends Model
 {
     protected $DBGroup          = 'default';
     protected $table            = 'trustee';
-    protected $primaryKey       = 'id';
+    protected $primaryKey       = 'trustee_id';
     protected $useAutoIncrement = true;
     protected $insertID         = 0;
     protected $returnType       = 'array';
@@ -16,7 +16,7 @@ class GuardianModel extends Model
     protected $protectFields    = true;
     protected $allowedFields    = [
         'trustee_name', 
-        'nic', 
+        'trustee_nic', 
         'mobile_number', 
         'work_place_phone_number', 
         'resident_phone_number', 

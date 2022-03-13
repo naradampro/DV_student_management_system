@@ -22,7 +22,7 @@
                                 <th>Name</th>
                                 <th>Address</th>
                                 <th>Occupation</th>
-                                <th>Action</th>
+                                <th colspan="2">Actions</th>
                             </tr>
                         </thead>
                         <tfoot>
@@ -30,7 +30,7 @@
                                 <th>Name</th>
                                 <th>Address</th>
                                 <th>Occupation</th>
-                                <th>Action</th>
+                                <th colspan="2">Actions</th>
                             </tr>
                         </tfoot>
                         <tbody>
@@ -39,7 +39,8 @@
             <td><?= esc($trustee_item['trustee_name']) ?></td>
             <td><?= esc($trustee_item['address']) ?></td>
             <td><?= esc($trustee_item['occupation']) ?></td> 
-            <td><a href="<?=base_url()?>/guardian/<?=esc($trustee_item['trustee_id'])?>">View</a></td>                                
+            <td><a href="<?=base_url()?>/guardian/<?=esc($trustee_item['trustee_id'])?>">View</a></td>  
+            <td><a href="<?= base_url()?>/guardian/edit/<?=esc($trustee_item['trustee_id']) ?>">Edit</a></td>                              
         </tr>                            
     <?php endforeach ?>
     </tbody>

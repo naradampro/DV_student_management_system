@@ -62,6 +62,9 @@ $routes->post('subject/update/(:segment)', 'SubjectController::update/$1');
 //routes for guardian managemant
 $routes->get('guardian', 'GuardianController::index');
 $routes->match(['get', 'post'], 'guardian/add_guardian_form/', 'GuardianController::create');
+$routes->get('guardian/(:segment)', 'GuardianController::view/$1');
+$routes->get('guardian/edit/(:segment)', 'GuardianController::edit/$1');
+$routes->post('guardian/update/(:segment)', 'GuardianController::update/$1');
 
 //routes for for temporary dev purposes
 $routes->get('devforms/', 'Home::devforms');
