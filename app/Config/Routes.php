@@ -38,6 +38,8 @@ $routes->get('student', 'StudentController::index');
 $routes->match(['get', 'post'], 'student/student_registration_form/', 'StudentController::create');
 $routes->match(['get', 'post'], 'student/all_students/', 'StudentController::all_view');
 $routes->get('student/(:segment)', 'StudentController::view/$1');
+$routes->get('student/edit/(:segment)', 'StudentController::edit/$1');
+$routes->post('student/update/(:segment)', 'StudentController::update/$1');
 
 //routes for teacher managemant
 $routes->get('teacher', 'TeacherController::index');

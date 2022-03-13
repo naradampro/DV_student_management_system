@@ -7,6 +7,7 @@ use CodeIgniter\Model;
 class StudentModel extends Model
 {
     protected $table = 'student';
+    protected $primaryKey = 'student_id';
     protected $allowedFields = [
         'full_name_en',
         'full_name_sin',
@@ -37,7 +38,8 @@ class StudentModel extends Model
 
     public function getStudentDetails($student_index_number = false){
         if ($student_index_number === false) {
-            return db_connect()->query("CALL get_active_students_all_data()")->getResultArray();        }
+            return db_connect()->query("CALL get_active_students_all_data()")->getResultArray();        
+        }
 
         return db_connect()->query("CALL get_student_by_index_no(".$student_index_number.")")->getResultArray();
     }

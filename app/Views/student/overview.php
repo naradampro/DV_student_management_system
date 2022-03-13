@@ -27,7 +27,7 @@
                                 <th>Name</th>
                                 <th>Address</th>
                                 <th>Birthday</th>
-                                <th>View</th>
+                                <th colspan="2">Actions</th>
                             </tr>
                         </thead>
                         <tfoot>
@@ -36,7 +36,7 @@
                                 <th>Name</th>
                                 <th>Address</th>
                                 <th>Birthday</th>
-                                <th>View</th>
+                                <th colspan="2">Actions</th>
                             </tr>
                         </tfoot>
                         <tbody>
@@ -46,7 +46,8 @@
             <td><?= esc($student_item['first_name']) ?> <?= esc($student_item['last_name']) ?></td>
             <td><?= esc($student_item['address']) ?></td>
             <td><?= esc($student_item['birthday']) ?></td>  
-            <td><a href="<?=base_url()?>/student/<?=esc($student_item['student_index_number'])?>">view</a></td>                              
+            <td><a href="<?=base_url()?>/student/<?=esc($student_item['student_index_number'])?>">View</a></td>
+            <td><a href="<?= base_url()?>/student/edit/<?=esc($student_item['student_index_number']) ?>">Edit</a></td>                                
         </tr>                            
     <?php endforeach ?>
     </tbody>
