@@ -90,14 +90,14 @@
              <!-- Nav Item - Guardians -->
              <li class="nav-item">
                 <a class="nav-link" href="<?= base_url() ?>/guardian">
-                    <i class="fas fa-fw fa-users"></i>
+                    <i class="fas fa-user-friends"></i> 
                     <span>Guardians</span></a>
             </li>
 
             <!-- Nav Item - Exams -->
             <li class="nav-item">
                 <a class="nav-link" href="<?= base_url() ?>/exam">
-                    <i class="fas fa-fw fa-users"></i>
+                    <i class="fas fa-newspaper"></i>
                     <span>Exams</span></a>
             </li>
             

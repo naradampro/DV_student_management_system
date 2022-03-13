@@ -6,7 +6,7 @@
 <?= session()->getFlashdata('error') ?>
 <?= service('validation')->listErrors() ?>
 
-<form class="user" action="<?= base_url()?>/student/update/<?=esc($student['student_index_number']) ?>" method="post">
+<form class="user" action="<?= base_url('/student/update/'.$student['student_index_number']) ?>" method="post">
 <?= csrf_field() ?>
 <label><strong>Student Name</strong></label><br>
         <div class="form-group row">

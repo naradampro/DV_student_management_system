@@ -23,24 +23,32 @@ class GuardianController extends BaseController
     public function view($trustee_id = null)
     {
         $model = model(GuardianModel::class); 
+
+        $data['trustee'] = $model->getGuardianDetails($trustee_id);
     
         if (empty($data['trustee'])) {
             throw new \CodeIgniter\Exceptions\PageNotFoundException('Cannot find the guardian item: ' . $trustee_id);
         }
     
-        //$data['sudent_index_number'] = $data['student']['sudent_index_number'];
+        $data['trustee_id'] = $data['trustee']['trustee_id'];
     
-        echo view('main_header', $data);
+        echo view('main_header');
         echo view('guardian/guardian_view', $data);
-        echo view('main_footer', $data);
+        echo view('main_footer' );
     }
     
     public function create()
     {
-        $model = model(GuardianModel::class);    
-        $Guardian_model = model(GuardianModel::class);
+        $model = model(GuardianModel::class);     
+        $relationship_type_model = model(RelationshipTypeModel::class);
+
+        $data = [
+            'relationship_type' => $relationship_type_model->getRelationshipType()       
+        ];  
     
         if ($this->request->getMethod() === 'post' && $this->validate([
+            'student_index_number' => 'required',
+            'relationship_type_id' => 'required',
             'trustee_name' => 'required|min_length[3]|max_length[100]', 
             'trustee_nic' => 'required', 
             'mobile_number' => 'required', 
@@ -52,6 +60,8 @@ class GuardianController extends BaseController
     
         ])) {
             $model->save([
+                'student_index_number' => $this->request->getPost('student_index_number'),
+                'relationship_type_id' => $this->request->getPost('relationship_type_id'),
                 'trustee_name' => $this->request->getPost('trustee_name'),
                 'trustee_nic' => $this->request->getPost('trustee_nic'), 
                 'mobile_number' => $this->request->getPost('mobile_number'),
@@ -66,7 +76,7 @@ class GuardianController extends BaseController
     
         } else {
             echo view('main_header');
-            echo view('guardian/add_guardian_form');
+            echo view('guardian/add_guardian_form',$data);
             echo view('main_footer');
         }
     }

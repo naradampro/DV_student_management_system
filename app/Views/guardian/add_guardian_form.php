@@ -8,11 +8,23 @@
 <form class="user" action="/guardian/add_guardian_form" method="post">
 <?= csrf_field() ?>
     <!-- Student Addmission Number -->
-    <div class="form-group row">
-    <div class="col-sm-6"></div> 
-    <div class="col-sm-3">  </div>
-        <div class="col-sm-3"> 
-                 <input type="text" class="form-control" id="student_index_number" placeholder="Student Addmission Number" name="student_index_number">
+    <div class="form-group row"> 
+        <div class="col-sm-6 mb-3 mb-sm-0"> 
+            <label>
+                <strong>Student Addmission Number</strong>
+            </label><br>
+                     <input type="text" class="form-control" id="student_index_number" placeholder="Student Addmission Number" name="student_index_number">
+        </div>
+        <div class="col-sm-6"> 
+                <label><strong>Relationship Type</strong></label><br>
+                    <div class="input-group mb-3">
+                        <select class="custom-select" id="relationship_type_id" name="relationship_type_id">                        
+                            <option selected>Choose the relationalship type</option>
+                            <?php foreach ($relationship_type as $item): ?>
+                             
+                            <?php endforeach ?>
+                        </select> 
+                    </div>
         </div>
          
     </div>

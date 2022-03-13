@@ -4,27 +4,18 @@ namespace App\Models;
 
 use CodeIgniter\Model;
 
-class GuardianModel extends Model
+class RelationshipTypeModel extends Model
 {
     protected $DBGroup          = 'default';
-    protected $table            = 'trustee';
-    protected $primaryKey       = 'trustee_id';
+    protected $table            = 'relationship_types';
+    protected $primaryKey       = 'relationship_type_id';
     protected $useAutoIncrement = true;
     protected $insertID         = 0;
     protected $returnType       = 'array';
     protected $useSoftDeletes   = false;
     protected $protectFields    = true;
     protected $allowedFields    = [
-        'student_id',
-        'relationship_type_id',
-        'trustee_name', 
-        'trustee_nic', 
-        'mobile_number', 
-        'work_place_phone_number', 
-        'resident_phone_number', 
-        'address',
-        'occupation',
-        'gender_id'
+        'relationship_name'
     ];
 
     // Dates
@@ -51,14 +42,12 @@ class GuardianModel extends Model
     protected $beforeDelete   = [];
     protected $afterDelete    = [];
 
-
-    public function getGuardianDetails($trustee_id = false){
-        if ($trustee_id === false) {
+    public function getRelationshipType($relationship_type_id = false){
+        if ($relationship_type_id === false) {
             return $this->findAll();
         }
 
-        return $this->where(['trustee_id' => $trustee_id])->first();
+        return $this->where(['relationship_type_id' => $relationship_type_id])->first();
     }
 
-    
 }
